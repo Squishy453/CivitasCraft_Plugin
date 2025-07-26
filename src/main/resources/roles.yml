@@ -39,3 +39,6 @@ roles:
   member:
     permissions:
       - civitas.use
+  visitor:
+    permissions:
+      - civitas.visitor

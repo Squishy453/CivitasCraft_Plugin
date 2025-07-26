@@ -19,9 +19,9 @@ public class PlayerJoinListener implements Listener {
         Player player = event.getPlayer();
 
         if (!plugin.getPlayersConfig().contains("players." + player.getUniqueId())) {
-            plugin.getPlayersConfig().set("players." + player.getUniqueId(), "member");
+            plugin.getPlayersConfig().set("players." + player.getUniqueId(), "visitor");
             plugin.savePlayersConfig();
-            player.sendMessage("You have been assigned the role: member");
+            player.sendMessage("You have been assigned the role: visitor");
         }
     }
 }

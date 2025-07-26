@@ -22,6 +22,11 @@ public class CivitasCraft extends JavaPlugin {
     private File rolesFile;
     private FileConfiguration rolesConfig;
 
+    //Getter for playerConfig
+    public FileConfiguration getPlayersConfig() {
+        return playersConfig;
+    }
+
     //Load players.yml
     public void loadPlayersConfig() {
         playersFile = new File(getDataFolder(), "players.yml");
