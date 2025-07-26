@@ -71,7 +71,18 @@ public class CivitasCraft extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
 
-        this.getCommand("civitas").setExecutor(new civitasCommand(this)); //Register /civitas command
+        this.getCommand("civitas").setExecutor(new civitasCommand(this)); //Register /civitas
+        this.getCommand("server").setExecutor(new serverCommand(this)); //Register /server
+        this.getCommand("ban").setExecutor(new banCommand(this)); //Register /ban
+        this.getCommand("unban").setExecutor(new unbanCommand(this)); //Register /unban
+        this.getCommand("kick").setExecutor(new kickCommand(this)); //Register /kick
+        this.getCommand("mute").setExecutor(new muteCommand(this)); //Register /mute
+        this.getCommand("warn").setExecutor(new warnCommand(this)); //Register /warn
+        this.getCommand("whitelist").setExecutor(new whitelistCommand(this)); //Register /whitelist
+        this.getCommand("vanish").setExecutor(new vanishCommand(this)); //Register /vanish
+        this.getCommand("inv").setExecutor(new invCommand(this)); //Register /inv
+        this.getCommand("announce").setExecutor(new announceCommand(this)); //Register /announce
+
     }
 
     //On Close

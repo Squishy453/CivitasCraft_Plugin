@@ -13,19 +13,86 @@ commands:
     description: Main command for CivitasCraft
     usage: /<command>
     permission: civitas.use
-
   ban:
-    description:
+    description: Ban Player
     usage: /ban <player> [reason] [duration]
-    permission: civitas.owner
+    permission: civitas.ban
+  unban:
+    description: Unban Player
+    usage: /unban <player> [reason]
+    permission: civitas.ban
+  kick:
+    description: Kick Player
+    usage: /kick <player> [reason]
+    permission: civitas.kick
+  mute:
+    description: Mutes Player
+    usage: /mute <player> [reason] [duration]
+    permission: civitas.mute
+  warn:
+    description: Warn Player / View Warnings / Remove Warnings
+    usage: /warn (add|remove|view) <player> {reason}
+    permission: civitas.warn
+  inv:
+    description: Access Player Inventory
+    usage: /inv <player> [ender|primary]
+    permission: civitas.inv
+  announce:
+    description: Broadcast server announcement
+    usage: /announce [message]
+    permission: civitas.announce
+  vanish:
+    description: Invisibility / Flying / No Hit Box
+    usage: /vanish or /unvanish
+    permission: civitas.vanish
+  list:
+    description: Lists current player information.
+    usage: /list
+    permission: civitas.list
+  server:
+    description: Close / Reload / Restart the Server
+    usage: /server [close|reload|restart]
+    permission: civitas.server
 
 permissions:
   civitas.owner:
     description: Allows use of Owner commands.
     default: false
-
   civitas.use:
     description: Allows use of /civitas
-    default: true
+    default: false
+  civitas.server:
+    description: Server Commands
+    default: false
+  civitas.ban:
+    description: Ban Command
+    default: false
+  civitas.unban:
+    description: Unban Command
+    default: false
+  civitas.kick:
+    description: Kick Command
+    default: false
+  civitas.mute:
+    description: Mute Command
+    default: false
+  civitas.warn:
+    description: Warn Commands
+    default: false
+  civitas.whitelist:
+    description: Whitelist Command
+    default: false
+  civitas.vanish:
+    description: Vanish Command
+    default: false
+  civitas.inv:
+    description: Access Player Inventory
+    default: false
+  civitas.announce:
+    description: Broadcast Announcement
+    default: false
+  civitas.visitor:
+    description: Visitor Permissions
+    default: yes
 
 load: STARTUP
