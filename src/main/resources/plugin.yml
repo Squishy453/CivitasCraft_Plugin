@@ -14,7 +14,16 @@ commands:
     usage: /<command>
     permission: civitas.use
 
+  ban:
+    description:
+    usage: /ban <player> [reason] [duration]
+    permission: civitas.owner
+
 permissions:
+  civitas.owner:
+    description: Allows use of Owner commands.
+    default: false
+
   civitas.use:
     description: Allows use of /civitas
     default: true

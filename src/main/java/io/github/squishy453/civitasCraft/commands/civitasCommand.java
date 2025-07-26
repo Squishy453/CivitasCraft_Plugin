@@ -30,7 +30,6 @@ public class civitasCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.GREEN + "----[ CivitasCraft Commands ]----");
             sender.sendMessage(ChatColor.YELLOW + "/civitas help" + ChatColor.GRAY + " - Show this help menu");
             sender.sendMessage(ChatColor.YELLOW + "/civitas reload" + ChatColor.GRAY + " - Reload plugin config (coming soon)");
-            sender.sendMessage(ChatColor.YELLOW + "/civitas rank" + ChatColor.GRAY + " - Rank commands (coming soon)");
             return true;
         }
 

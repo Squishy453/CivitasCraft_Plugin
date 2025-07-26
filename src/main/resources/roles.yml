@@ -1,0 +1,41 @@
+roles:
+  owner:
+    prefix: "[Owner]"
+    permissions:
+      - civitas.use
+      - civitas.server
+      - civitas.ban
+      - civitas.unban
+      - civitas.banlist
+      - civitas.kick
+      - civitas.mute
+      - civitas.warn
+      - civitas.whitelist
+      - civitas.vanish
+      - civitas.inv
+      - civitas.announce
+  admin:
+    prefix: "[Administrator]"
+    permissions:
+      - civitas.use
+      - civitas.banlist
+      - civitas.kick
+      - civitas.mute
+      - civitas.warn
+      - civitas.whitelist
+      - civitas.vanish
+      - civitas.inv
+      - civitas.announce
+  moderator:
+    prefix: "[Moderator]"
+    permissions:
+      - civitas.use
+      - civitas.banlist
+      - civitas.kick
+      - civitas.mute
+      - civitas.warn
+      - civitas.vanish
+      - civitas.inv
+  member:
+    permissions:
+      - civitas.use
