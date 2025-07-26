@@ -39,12 +39,11 @@ public class banCommand implements CommandExecutor {
     }
 
 
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         //Define reason
-        String reason = "Banned by an operator."; // default
+        String reason = "Banned by an operator.";
         if (args.length > 2) {
             reason = String.join(" ", java.util.Arrays.copyOfRange(args, 2, args.length));
         }
@@ -61,7 +60,7 @@ public class banCommand implements CommandExecutor {
             return true;
         }
 
-        //3. Get Player
+        //3. Get Player / Argument Return
         Player target = Bukkit.getPlayer(args[0]);
         if (target ==null) {
             sender.sendMessage(ChatColor.RED + "That player is not found!");
@@ -83,7 +82,7 @@ public class banCommand implements CommandExecutor {
         //6. Calculate Expiration Date
         Date expiry = durationMillis == 0 ? null : new Date(System.currentTimeMillis() + durationMillis);
 
-        //7. Ban & Kick
+        //7. Run Command Action
         Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason, expiry, sender.getName());
         target.kickPlayer(ChatColor.RED + "You have been banned!\nReason: " + reason +
                 (expiry != null ? "\nExpires: " + expiry : "\nDuration: Permanent"));
@@ -92,9 +91,9 @@ public class banCommand implements CommandExecutor {
         sender.sendMessage(ChatColor.GREEN + target.getName() + " has been banned for: " + reason +
                 (expiry != null ? " (Expires: " + expiry + ")" : " (Permanent)"));
 
+        //9. Log Command
         plugin.getLogger().info(sender.getName() + " banned " + target.getName() +
                 (expiry != null ? " until " + expiry : " permanently") + " for: " + reason);
-
         plugin.logCommand("ban", sender.getName(),
                 target.getName(), target.getUniqueId().toString(),
                 (expiry != null ? "Banned until " + expiry : "Banned permanently") + " for: " + reason);

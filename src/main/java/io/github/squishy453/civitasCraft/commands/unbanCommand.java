@@ -20,13 +20,13 @@ public class unbanCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        // Permission check
+        //1. Check Permissions
         if (!sender.hasPermission("civitas.unban")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
             return true;
         }
 
-        // Argument check
+        //2. Check Arguments
         if (args.length < 1) {
             sender.sendMessage(ChatColor.RED + "Usage: /unban <player> [reason]");
             return true;
@@ -34,26 +34,27 @@ public class unbanCommand implements CommandExecutor {
 
         String playerName = args[0];
 
-        // Check if the player is actually banned
+        //3. Get Player / Argument Return
         BanEntry banEntry = Bukkit.getBanList(BanList.Type.NAME).getBanEntry(playerName);
         if (banEntry == null) {
             sender.sendMessage(ChatColor.YELLOW + playerName + " is not banned.");
             return true;
         }
 
-        // Optional reason
+        //4. Optional - Grab Reason
         String reason = "Unbanned by " + sender.getName();
         if (args.length > 1) {
             reason = String.join(" ", java.util.Arrays.copyOfRange(args, 1, args.length));
         }
 
-        // Remove ban
+        //5. Run Command Action
         Bukkit.getBanList(BanList.Type.NAME).pardon(playerName);
 
-        // Notify sender
+        //6. Notify Sender
         sender.sendMessage(ChatColor.GREEN + playerName + " has been unbanned. Reason: " + reason);
 
 
+        //7. Log Command
         plugin.getLogger().info(sender.getName() + " unbanned " + playerName + " for: " + reason);
 
         plugin.logCommand("unban", sender.getName(),

@@ -1,44 +1,33 @@
 roles:
+
+  #Staff Roles
   owner:
-    prefix: "[Owner]"
+    prefix: "[OWNER]"
     permissions:
-      - civitas.use
-      - civitas.server
-      - civitas.ban
-      - civitas.unban
-      - civitas.banlist
-      - civitas.kick
-      - civitas.mute
-      - civitas.warn
-      - civitas.whitelist
-      - civitas.vanish
-      - civitas.inv
-      - civitas.announce
+      civitas.owner: true
+      civitas.admin: true
+      civitas.moderator: true
+      civitas.member: true
+
   admin:
-    prefix: "[Administrator]"
+    prefix: "[ADMINISTRATOR]"
     permissions:
-      - civitas.use
-      - civitas.banlist
-      - civitas.kick
-      - civitas.mute
-      - civitas.warn
-      - civitas.whitelist
-      - civitas.vanish
-      - civitas.inv
-      - civitas.announce
+      civitas.admin: true
+      civitas.moderator: true
+      civitas.member: true
+
   moderator:
-    prefix: "[Moderator]"
+    prefix: "[MODERATOR]"
     permissions:
-      - civitas.use
-      - civitas.banlist
-      - civitas.kick
-      - civitas.mute
-      - civitas.warn
-      - civitas.vanish
-      - civitas.inv
+      civitas.moderator: true
+      civitas.member: true
+
   member:
+    prefix: "[MEMBER]"
     permissions:
-      - civitas.use
+      civitas.member: true
+
   visitor:
+    prefix: "[VISITOR]"
     permissions:
-      - civitas.visitor
+      civitas.visitor: true
