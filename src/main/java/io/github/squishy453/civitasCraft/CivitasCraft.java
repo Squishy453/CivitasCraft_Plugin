@@ -18,7 +18,7 @@ import io.github.squishy453.civitasCraft.commands.civitasCommand;
 //import io.github.squishy453.civitasCraft.commands.kickCommand;
 //import io.github.squishy453.civitasCraft.commands.muteCommand;
 //import io.github.squishy453.civitasCraft.commands.serverCommand;
-import io.github.squishy453.civitasCraft.commands.unbanCommand;
+//import io.github.squishy453.civitasCraft.commands.unbanCommand;
 //import io.github.squishy453.civitasCraft.commands.whitelistCommand;
 //import io.github.squishy453.civitasCraft.commands.vanishCommand;
 //import io.github.squishy453.civitasCraft.commands.warnCommand;
@@ -78,7 +78,7 @@ public class CivitasCraft extends JavaPlugin {
     //Log Commands
     public void logCommand(String commandName, String executor, String targetName, String targetUUID, String details) {
         try {
-            File logFile = new File(getDataFolder(), "command-logs.log");
+            File logFile = new File(getDataFolder(), "mod-logs.log");
             if (!logFile.exists()) {
                 logFile.createNewFile();
             }
