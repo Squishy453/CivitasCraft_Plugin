@@ -53,8 +53,12 @@ public class unbanCommand implements CommandExecutor {
         // Notify sender
         sender.sendMessage(ChatColor.GREEN + playerName + " has been unbanned. Reason: " + reason);
 
-        // Optionally broadcast (comment out if you don't want this)
-        Bukkit.broadcastMessage(ChatColor.YELLOW + playerName + " has been unbanned. Reason: " + reason);
+
+        plugin.getLogger().info(sender.getName() + " unbanned " + playerName + " for: " + reason);
+
+        plugin.logCommand("unban", sender.getName(),
+                playerName, banEntry.getTarget(),
+                "Unbanned for: " + reason);
 
         return true;
     }

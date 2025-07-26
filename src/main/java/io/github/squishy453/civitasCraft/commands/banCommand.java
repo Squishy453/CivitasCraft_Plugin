@@ -91,6 +91,16 @@ public class banCommand implements CommandExecutor {
         //8. Notify Sender
         sender.sendMessage(ChatColor.GREEN + target.getName() + " has been banned for: " + reason +
                 (expiry != null ? " (Expires: " + expiry + ")" : " (Permanent)"));
+
+        plugin.getLogger().info(sender.getName() + " banned " + target.getName() +
+                (expiry != null ? " until " + expiry : " permanently") + " for: " + reason);
+
+        plugin.logCommand("ban", sender.getName(),
+                target.getName(), target.getUniqueId().toString(),
+                (expiry != null ? "Banned until " + expiry : "Banned permanently") + " for: " + reason);
+
         return true;
+
+
     }
 }

@@ -2,6 +2,7 @@ package io.github.squishy453.civitasCraft;
 
 //Java Imports
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 //YAML File Imports
@@ -69,6 +70,23 @@ public class CivitasCraft extends JavaPlugin {
     public void saveRolesConfig() {
         try {
             rolesConfig.save(rolesFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Log Commands
+    public void logCommand(String commandName, String executor, String targetName, String targetUUID, String details) {
+        try {
+            File logFile = new File(getDataFolder(), "command-logs.log");
+            if (!logFile.exists()) {
+                logFile.createNewFile();
+            }
+
+            FileWriter writer = new FileWriter(logFile, true);
+            writer.write("[" + new java.util.Date() + "] [" + commandName.toUpperCase() + "] "
+                    + executor + " -> " + targetName + " (" + targetUUID + "): " + details + "\n");
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
