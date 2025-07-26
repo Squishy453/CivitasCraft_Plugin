@@ -58,6 +58,11 @@ permissions:
   civitas.owner:
     description: Allows use of Owner commands.
     default: false
+
+  civitas.staff:
+    description: Staff Permission
+    default: false
+
   civitas.use:
     description: Allows use of /civitas
     default: false
