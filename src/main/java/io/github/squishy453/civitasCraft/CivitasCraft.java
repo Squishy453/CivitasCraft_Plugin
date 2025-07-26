@@ -10,17 +10,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CivitasCraft extends JavaPlugin {
+
     @Override
     public void onEnable() {
-        getLogger().info("CivitasCraft has been enabled.");
+        getLogger().info("CivitasCraft has been enabled."); //Plugin Initialization
 
-        this.getCommand("civitas").setExecutor(new CivitasCommand(this));
+        this.getCommand("civitas").setExecutor(new civitasCommand(this)); //Register /civitas command
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("CivitasCraft has been disabled.");
+        getLogger().info("CivitasCraft has been disabled."); //Plugin Shutdown
     }
-
-
 }

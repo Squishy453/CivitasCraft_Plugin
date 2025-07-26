@@ -15,8 +15,8 @@ commands:
     permission: civitas.use
 
 permissions:
-  civitas.admin.level1:
-    description: Allows usage of /civitas
+  civitas.use:
+    description: Allows use of /civitas
     default: true
 
 load: STARTUP
