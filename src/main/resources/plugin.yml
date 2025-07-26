@@ -1,0 +1,22 @@
+name: CivitasCraft
+
+main: io.github.squishy453.civitasCraft.CivitasCraft
+
+version: '1.0-SNAPSHOT'
+
+api-version: '1.21'
+
+author: Squishy453
+
+commands:
+  civitas:
+    description: Main command for CivitasCraft
+    usage: /<command>
+    permission: civitas.use
+
+permissions:
+  civitas.admin.level1:
+    description: Allows usage of /civitas
+    default: true
+
+load: STARTUP
